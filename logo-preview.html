@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BayTex — Logo Concepts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --tiffany:    #0ABAB5;
+      --tiffany-hi: #3DCBC7;
+      --tiffany-lo: #088880;
+      --tiffany-dk: #057570;
+      --black:      #090909;
+      --surface:    #111111;
+      --white:      #F0EDE8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Mono', monospace;
+      background: #0d0d0d;
+      color: var(--white);
+      min-height: 100vh;
+      padding: 3rem;
+    }
+
+    header {
+      margin-bottom: 4rem;
+      border-bottom: 1px solid rgba(10,186,181,0.2);
+      padding-bottom: 2rem;
+    }
+    header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: .15em;
+      color: var(--tiffany);
+    }
+    header p {
+      font-size: .72rem;
+      font-weight: 300;
+      letter-spacing: .15em;
+      color: rgba(240,237,232,0.4);
+      margin-top: .5rem;
+    }
+
+    .section-label {
+      font-size: .6rem;
+      font-weight: 300;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--tiffany);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── LOGO SHOWCASE GRID ── */
+    .logo-section {
+      margin-bottom: 5rem;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(10,186,181,0.12);
+    }
+
+    .preview-tile {
+      padding: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+    }
+    .preview-tile.dark  { background: var(--black); }
+    .preview-tile.light { background: #F0EDE8; }
+
+    /* inline SVG — rendered by browser using loaded fonts */
+    .crane-svg {
+      overflow: visible;
+    }
+
+    /* ── PRIMARY LOGO ── */
+    .primary-logo {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+    }
+    .crane-mark {
+      flex-shrink: 0;
+    }
+    .wordmark-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .wm-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5.2rem;
+      letter-spacing: .06em;
+      line-height: 1;
+    }
+    .wm-text.on-dark  { color: var(--white); }
+    .wm-text.on-light { color: #0a0a0a; }
+
+    .rule-line {
+      height: 1px;
+      background: var(--tiffany);
+      opacity: .5;
+      margin: .4rem 0;
+    }
+
+    .tagline-text {
+      font-family: 'DM Mono', monospace;
+      font-size: .52rem;
+      font-weight: 300;
+      letter-spacing: .35em;
+      color: var(--tiffany);
+    }
+
+    /* vertical rule between mark and type */
+    .vert-rule {
+      width: 1px;
+      height: 90px;
+      background: linear-gradient(to bottom, transparent, var(--tiffany), transparent);
+      opacity: .5;
+      flex-shrink: 0;
+    }
+
+    /* ── STACKED LOGO ── */
+    .stacked-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .8rem;
+    }
+    .stacked-logo .wm-text { font-size: 3.8rem; letter-spacing: .12em; }
+    .stacked-logo .rule-line { width: 100%; }
+    .stacked-logo .tagline-text { text-align: center; }
+
+    /* ── ICON ONLY ── */
+    .icon-wrap { display: flex; align-items: center; justify-content: center; }
+
+    /* ── CRANE GEOMETRY (inline, drawn with CSS clip-path free polygons via inline SVG) ── */
+    /* We redraw inline here for font rendering correctness */
+
+    .preview-label {
+      font-size: .58rem;
+      font-weight: 300;
+      letter-spacing: .2em;
+      color: rgba(240,237,232,0.28);
+      padding: .75rem 3.5rem;
+      background: var(--surface);
+      border-top: 1px solid rgba(10,186,181,0.1);
+    }
+
+    .preview-set {
+      background: rgba(10,186,181,0.05);
+      border: 1px solid rgba(10,186,181,0.1);
+    }
+
+    .note-block {
+      background: rgba(10,186,181,0.05);
+      border-left: 2px solid var(--tiffany);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .note-block p {
+      font-size: .68rem;
+      font-weight: 300;
+      letter-spacing: .08em;
+      line-height: 1.8;
+      color: rgba(240,237,232,0.6);
+    }
+    .note-block strong { color: var(--tiffany); font-weight: 400; }
+
+    .color-row {
+      display: flex;
+      gap: 1px;
+      margin-top: 2rem;
+      background: rgba(10,186,181,0.12);
+    }
+    .swatch {
+      flex: 1;
+      height: 56px;
+      position: relative;
+    }
+    .swatch-label {
+      position: absolute;
+      bottom: 6px; left: 10px;
+      font-size: .5rem;
+      letter-spacing: .15em;
+      color: rgba(240,237,232,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BAYTEX — LOGO CONCEPTS</h1>
+    <p>PAPER CRANE · GEOMETRIC · TIFFANY BLUE · BEBAS NEUE + DM MONO</p>
+  </header>
+
+  <!-- ════════════════════════════════════════════
+       01 — PRIMARY HORIZONTAL LOGO
+  ════════════════════════════════════════════ -->
+  <div class="logo-section">
+    <p class="section-label">01 — Primary Horizontal Lockup</p>
+    <div class="preview-set">
+      <div class="preview-grid">
+
+        <!-- DARK BG -->
+        <div class="preview-tile dark">
+          <div class="primary-logo">
+            <!-- Crane Mark -->
+            <div class="crane-mark">
+              <svg class="crane-svg" viewBox="0 0 100 140" width="72" height="101">
+                <!-- LEFT WING -->
+                <polygon points="50,48 12,22 -4,44 34,58" fill="#0ABAB5"/>
+                <polygon points="34,58 -4,44 4,66 34,66" fill="#057570"/>
+                <polygon points="-4,44 4,66 -14,55" fill="#0ABAB5"/>
+                <!-- RIGHT WING -->
+                <polygon points="50,48 88,22 104,44 66,58" fill="#3DCBC7"/>
+                <polygon points="66,58 104,44 96,66 66,66" fill="#088880"/>
+                <polygon points="104,44 96,66 114,55" fill="#3DCBC7"/>
+                <!-- BODY -->
+                <polygon points="50,48 34,58 50,66 66,58" fill="#057570"/>
+                <!-- TAIL -->
+                <polygon points="50,66 34,58 37,88 50,92" fill="#0ABAB5"/>
+                <polygon points="50,66 66,58 63,88 50,92" fill="#088880"/>
+                <polygon points="37,88 50,92 63,88 50,104" fill="#057570"/>
+                <!-- NECK -->
+                <polygon points="50,48 44,34 46,22 50,21" fill="#088880"/>
+                <polygon points="50,48 56,34 54,22 50,21" fill="#0ABAB5"/>
+                <!-- HEAD -->
+                <polygon points="50,21 44,13 50,8" fill="#0ABAB5"/>
+                <polygon points="50,21 56,13 50,8" fill="#3DCBC7"/>
+                <polygon points="44,13 56,13 50,8" fill="#057570"/>
+                <!-- BEAK -->
+                <polygon points="44,13 50,8 47,0" fill="#0ABAB5"/>
+                <polygon points="56,13 50,8 53,0" fill="#088880"/>
+                <polygon points="47,0 53,0 50,-8" fill="#057570"/>
+              </svg>
+            </div>
+
+            <!-- Vertical Rule -->
+            <div class="vert-rule"></div>
+
+            <!-- Wordmark -->
+            <div class="wordmark-group">
+              <span class="wm-text on-dark">BAYTEX</span>
+              <div class="rule-line"></div>
+              <span class="tagline-text">DESIGN · MERCH · DELIVERED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIGHT BG -->
+        <div class="preview-tile light">
+          <div class="primary-logo">
+            <div class="crane-mark">
+              <svg class="crane-svg" viewBox="0 0 100 140" width="72" height="101">
+                <polygon points="50,48 12,22 -4,44 34,58" fill="#0ABAB5"/>
+                <polygon points="34,58 -4,44 4,66 34,66" fill="#057570"/>
+                <polygon points="-4,44 4,66 -14,55" fill="#0ABAB5"/>
+                <polygon points="50,48 88,22 104,44 66,58" fill="#3DCBC7"/>
+                <polygon points="66,58 104,44 96,66 66,66" fill="#088880"/>
+                <polygon points="104,44 96,66 114,55" fill="#3DCBC7"/>
+                <polygon points="50,48 34,58 50,66 66,58" fill="#057570"/>
+                <polygon points="50,66 34,58 37,88 50,92" fill="#0ABAB5"/>
+                <polygon points="50,66 66,58 63,88 50,92" fill="#088880"/>
+                <polygon points="37,88 50,92 63,88 50,104" fill="#057570"/>
+                <polygon points="50,48 44,34 46,22 50,21" fill="#088880"/>
+                <polygon points="50,48 56,34 54,22 50,21" fill="#0ABAB5"/>
+                <polygon points="50,21 44,13 50,8" fill="#0ABAB5"/>
+                <polygon points="50,21 56,13 50,8" fill="#3DCBC7"/>
+                <polygon points="44,13 56,13 50,8" fill="#057570"/>
+                <polygon points="44,13 50,8 47,0" fill="#0ABAB5"/>
+                <polygon points="56,13 50,8 53,0" fill="#088880"/>
+                <polygon points="47,0 53,0 50,-8" fill="#057570"/>
+              </svg>
+            </div>
+            <div class="vert-rule" style="background: linear-gradient(to bottom, transparent, #0ABAB5, transparent);"></div>
+            <div class="wordmark-group">
+              <span class="wm-text on-light">BAYTEX</span>
+              <div class="rule-line"></div>
+              <span class="tagline-text">DESIGN · MERCH · DELIVERED</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="preview-label">HORIZONTAL LOCKUP — USE FOR WEBSITE HEADER, LETTERHEAD, EMAIL SIGNATURE</div>
+    </div>
+
+    <div class="note-block">
+      <p>
+        The crane is constructed entirely from <strong>triangular geometric facets</strong> — no curves, no softness. 
+        Each plane catches a different tint of Tiffany blue, giving depth without gradients. 
+        The beak points up and sharp — deliberate, directional, confident. 
+        The vertical rule between mark and wordmark is a nod to print and editorial.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════
+       02 — STACKED / SQUARE LOGO
+  ════════════════════════════════════════════ -->
+  <div class="logo-section">
+    <p class="section-label">02 — Stacked Lockup</p>
+    <div class="preview-set">
+      <div class="preview-grid">
+
+        <div class="preview-tile dark">
+          <div class="stacked-logo">
+            <svg class="crane-svg" viewBox="0 0 120 130" width="96" height="104">
+              <polygon points="60,50 14,20 -4,46 40,62" fill="#0ABAB5"/>
+              <polygon points="40,62 -4,46 6,72 40,72" fill="#057570"/>
+              <polygon points="-4,46 6,72 -18,60" fill="#0ABAB5"/>
+              <polygon points="60,50 106,20 124,46 80,62" fill="#3DCBC7"/>
+              <polygon points="80,62 124,46 114,72 80,72" fill="#088880"/>
+              <polygon points="124,46 114,72 138,60" fill="#3DCBC7"/>
+              <polygon points="60,50 40,62 60,72 80,62" fill="#057570"/>
+              <polygon points="60,72 40,62 44,96 60,101" fill="#0ABAB5"/>
+              <polygon points="60,72 80,62 76,96 60,101" fill="#088880"/>
+              <polygon points="44,96 60,101 76,96 60,116" fill="#057570"/>
+              <polygon points="60,50 53,34 55,20 60,18" fill="#088880"/>
+              <polygon points="60,50 67,34 65,20 60,18" fill="#0ABAB5"/>
+              <polygon points="60,18 53,10 60,4" fill="#0ABAB5"/>
+              <polygon points="60,18 67,10 60,4" fill="#3DCBC7"/>
+              <polygon points="53,10 67,10 60,4" fill="#057570"/>
+              <polygon points="53,10 60,4 57,-6" fill="#0ABAB5"/>
+              <polygon points="67,10 60,4 63,-6" fill="#088880"/>
+              <polygon points="57,-6 63,-6 60,-16" fill="#057570"/>
+            </svg>
+            <div class="wordmark-group" style="align-items:center;">
+              <span class="wm-text on-dark" style="font-size:3.4rem;letter-spacing:.14em;">BAYTEX</span>
+              <div class="rule-line" style="width:100%;"></div>
+              <span class="tagline-text" style="text-align:center;">DESIGN · MERCH · DELIVERED</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-tile light">
+          <div class="stacked-logo">
+            <svg class="crane-svg" viewBox="0 0 120 130" width="96" height="104">
+              <polygon points="60,50 14,20 -4,46 40,62" fill="#0ABAB5"/>
+              <polygon points="40,62 -4,46 6,72 40,72" fill="#057570"/>
+              <polygon points="-4,46 6,72 -18,60" fill="#0ABAB5"/>
+              <polygon points="60,50 106,20 124,46 80,62" fill="#3DCBC7"/>
+              <polygon points="80,62 124,46 114,72 80,72" fill="#088880"/>
+              <polygon points="124,46 114,72 138,60" fill="#3DCBC7"/>
+              <polygon points="60,50 40,62 60,72 80,62" fill="#057570"/>
+              <polygon points="60,72 40,62 44,96 60,101" fill="#0ABAB5"/>
+              <polygon points="60,72 80,62 76,96 60,101" fill="#088880"/>
+              <polygon points="44,96 60,101 76,96 60,116" fill="#057570"/>
+              <polygon points="60,50 53,34 55,20 60,18" fill="#088880"/>
+              <polygon points="60,50 67,34 65,20 60,18" fill="#0ABAB5"/>
+              <polygon points="60,18 53,10 60,4" fill="#0ABAB5"/>
+              <polygon points="60,18 67,10 60,4" fill="#3DCBC7"/>
+              <polygon points="53,10 67,10 60,4" fill="#057570"/>
+              <polygon points="53,10 60,4 57,-6" fill="#0ABAB5"/>
+              <polygon points="67,10 60,4 63,-6" fill="#088880"/>
+              <polygon points="57,-6 63,-6 60,-16" fill="#057570"/>
+            </svg>
+            <div class="wordmark-group" style="align-items:center;">
+              <span class="wm-text on-light" style="font-size:3.4rem;letter-spacing:.14em;">BAYTEX</span>
+              <div class="rule-line" style="width:100%;"></div>
+              <span class="tagline-text" style="text-align:center;">DESIGN · MERCH · DELIVERED</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="preview-label">STACKED LOCKUP — USE FOR SOCIAL PROFILE, APPAREL TAG, SQUARE FORMATS</div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════
+       03 — ICON ONLY / MARK ONLY
+  ════════════════════════════════════════════ -->
+  <div class="logo-section">
+    <p class="section-label">03 — Mark Only</p>
+    <div class="preview-set">
+      <div class="preview-grid">
+
+        <!-- Large on dark -->
+        <div class="preview-tile dark">
+          <div class="icon-wrap">
+            <svg class="crane-svg" viewBox="0 0 120 130" width="140" height="152">
+              <polygon points="60,50 14,20 -4,46 40,62" fill="#0ABAB5"/>
+              <polygon points="40,62 -4,46 6,72 40,72" fill="#057570"/>
+              <polygon points="-4,46 6,72 -18,60" fill="#0ABAB5"/>
+              <polygon points="60,50 106,20 124,46 80,62" fill="#3DCBC7"/>
+              <polygon points="80,62 124,46 114,72 80,72" fill="#088880"/>
+              <polygon points="124,46 114,72 138,60" fill="#3DCBC7"/>
+              <polygon points="60,50 40,62 60,72 80,62" fill="#057570"/>
+              <polygon points="60,72 40,62 44,96 60,101" fill="#0ABAB5"/>
+              <polygon points="60,72 80,62 76,96 60,101" fill="#088880"/>
+              <polygon points="44,96 60,101 76,96 60,116" fill="#057570"/>
+              <polygon points="60,50 53,34 55,20 60,18" fill="#088880"/>
+              <polygon points="60,50 67,34 65,20 60,18" fill="#0ABAB5"/>
+              <polygon points="60,18 53,10 60,4" fill="#0ABAB5"/>
+              <polygon points="60,18 67,10 60,4" fill="#3DCBC7"/>
+              <polygon points="53,10 67,10 60,4" fill="#057570"/>
+              <polygon points="53,10 60,4 57,-6" fill="#0ABAB5"/>
+              <polygon points="67,10 60,4 63,-6" fill="#088880"/>
+              <polygon points="57,-6 63,-6 60,-16" fill="#057570"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Small sizes on light -->
+        <div class="preview-tile light" style="gap: 1.5rem; flex-direction: column; justify-content: center; align-items: center;">
+          <!-- 64px -->
+          <svg class="crane-svg" viewBox="0 0 120 130" width="64" height="69">
+            <polygon points="60,50 14,20 -4,46 40,62" fill="#0ABAB5"/>
+            <polygon points="40,62 -4,46 6,72 40,72" fill="#057570"/>
+            <polygon points="60,50 106,20 124,46 80,62" fill="#3DCBC7"/>
+            <polygon points="80,62 124,46 114,72 80,72" fill="#088880"/>
+            <polygon points="60,50 40,62 60,72 80,62" fill="#057570"/>
+            <polygon points="60,72 40,62 44,96 60,101" fill="#0ABAB5"/>
+            <polygon points="60,72 80,62 76,96 60,101" fill="#088880"/>
+            <polygon points="44,96 60,101 76,96 60,116" fill="#057570"/>
+            <polygon points="60,50 53,34 55,20 60,18" fill="#088880"/>
+            <polygon points="60,50 67,34 65,20 60,18" fill="#0ABAB5"/>
+            <polygon points="60,18 53,10 60,4" fill="#0ABAB5"/>
+            <polygon points="60,18 67,10 60,4" fill="#3DCBC7"/>
+            <polygon points="53,10 67,10 60,4" fill="#057570"/>
+            <polygon points="57,-6 63,-6 60,-16" fill="#057570"/>
+          </svg>
+          <!-- 32px -->
+          <svg class="crane-svg" viewBox="0 0 120 130" width="32" height="35">
+            <polygon points="60,50 14,20 -4,46 40,62" fill="#0ABAB5"/>
+            <polygon points="40,62 -4,46 6,72 40,72" fill="#057570"/>
+            <polygon points="60,50 106,20 124,46 80,62" fill="#3DCBC7"/>
+            <polygon points="80,62 124,46 114,72 80,72" fill="#088880"/>
+            <polygon points="60,50 40,62 60,72 80,62" fill="#057570"/>
+            <polygon points="60,72 40,62 44,96 60,101" fill="#0ABAB5"/>
+            <polygon points="60,72 80,62 76,96 60,101" fill="#088880"/>
+            <polygon points="44,96 60,101 76,96 60,116" fill="#057570"/>
+            <polygon points="60,50 53,34 55,20 60,18" fill="#088880"/>
+            <polygon points="60,50 67,34 65,20 60,18" fill="#0ABAB5"/>
+          </svg>
+          <!-- 20px favicon size -->
+          <svg class="crane-svg" viewBox="0 0 120 130" width="20" height="22">
+            <polygon points="60,50 14,20 -4,46 40,62" fill="#0ABAB5"/>
+            <polygon points="60,50 106,20 124,46 80,62" fill="#3DCBC7"/>
+            <polygon points="60,50 40,62 60,72 80,62" fill="#057570"/>
+            <polygon points="60,72 40,62 44,96 60,101" fill="#0ABAB5"/>
+            <polygon points="60,72 80,62 76,96 60,101" fill="#088880"/>
+            <polygon points="44,96 60,101 76,96 60,116" fill="#057570"/>
+          </svg>
+          <span style="font-size:.52rem;letter-spacing:.2em;color:#0ABAB5;margin-top:.5rem;">64px · 32px · 20px</span>
+        </div>
+
+      </div>
+      <div class="preview-label">CRANE MARK — USE FOR FAVICON, EMBROIDERY, STAMPS, APP ICON</div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════
+       BRAND COLORS
+  ════════════════════════════════════════════ -->
+  <div class="logo-section">
+    <p class="section-label">Brand Color Palette</p>
+    <div class="color-row">
+      <div class="swatch" style="background:#0ABAB5;"><span class="swatch-label">#0ABAB5</span></div>
+      <div class="swatch" style="background:#3DCBC7;"><span class="swatch-label">#3DCBC7</span></div>
+      <div class="swatch" style="background:#088880;"><span class="swatch-label">#088880</span></div>
+      <div class="swatch" style="background:#057570;"><span class="swatch-label">#057570</span></div>
+      <div class="swatch" style="background:#090909;"><span class="swatch-label" style="color:rgba(240,237,232,0.4)">#090909</span></div>
+      <div class="swatch" style="background:#F0EDE8;"><span class="swatch-label" style="color:#333">#F0EDE8</span></div>
+    </div>
+  </div>
+
+</body>
+</html>
